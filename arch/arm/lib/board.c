@@ -256,7 +256,7 @@ init_fnc_t *init_sequence[] = {
 	NULL,
 };
 
-void board_init_f(ulong bootflag)
+unsigned int board_init_f(ulong bootflag)
 {
 	bd_t *bd;
 	init_fnc_t **init_fnc_ptr;
@@ -435,8 +435,8 @@ void board_init_f(ulong bootflag)
 	debug("relocation Offset is: %08lx\n", gd->reloc_off);
 	memcpy(id, (void *)gd, sizeof(gd_t));
 
-	relocate_code(addr_sp, id, addr);
-
+	//relocate_code(addr_sp, id, addr);
+	return (unsigned int)id;
 	/* NOTREACHED - relocate_code() does not return */
 }
 
