@@ -161,6 +161,8 @@
 #define CONFIG_LZO
 #define CONFIG_LZMA
 
+#define CONFIG_CMD_NAND_YAFFS
+
 #define CONFIG_BOOTARGS "console=ttySAC0  root=/dev/mtdblocks3" 
 #define CONFIG_BOOTCOMMAND "nand read 30000000 kernel;bootm 30000000 "
 
